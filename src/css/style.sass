@@ -1,0 +1,298 @@
+@import variables
+
+body
+	background: #E5E5E5
+	font-size: 12px
+
+h2
+	color: #192A3E
+	margin: 0
+
+a
+	text-decoration: none
+
+ul, li
+	list-style-type: none
+	padding: 0
+	margin: 0
+
+.transparent
+	display: none
+
+.container
+	width: 1130px
+	min-height: 300px
+	font-family: 'Poppins', sans-serif
+	margin: 40px auto
+
+.title
+	display: flex
+	justify-content: space-between
+	margin-bottom: 22px
+	&__right
+		display: flex
+		flex-wrap: none
+		align-items: center
+
+.blue__color
+	color: $blue_color
+
+.dropdown
+	.blue__color
+		margin-right: 8px
+
+.dropdown-menu
+	font-size: 1em
+	width: 172px
+
+.btn
+	&-primary
+		width: 35px
+		height: 35px
+		padding: 9px
+		margin-left: 25px
+	&-secondary
+		font-size: 1em
+		color: $main_text_color
+		background: none
+		border: none
+		display: flex
+		align-items: center
+		&:hover, &:active, &:focus
+			color: $main_text_color!important
+			background: rgba(165, 191, 255, 0.5)!important
+
+.dashboard
+	background: #ffffff
+	box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.04)
+	border-radius: 5px
+	padding: 25px
+	&__header
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding-bottom: 25px
+		border-bottom: 1px solid $border_color
+		margin-bottom: 25px
+
+
+.logo
+	color: #ffffff
+	font-weight: 900
+	font-size: 1.083em
+	text-transform: uppercase
+	background: #000000
+	border-radius: 50%
+	padding: 4px 8px
+
+.link
+	color: #000000
+	font-weight: $font_bold
+	font-size: 1.25em
+	margin-left: 10px
+
+.options
+	display: flex
+	svg
+		width: 15px
+		height: 15px
+		margin-left: 12px
+
+.indicators
+	display: flex
+	&__name
+		font-weight: $font-bold
+		font-size: 0.916em
+		text-transform: capitalize
+		color: #818E9B
+		margin-bottom: 28px
+
+.column
+	color: $main_text_color
+	min-height: 200px
+	padding: 0 32px
+	border-right: 1px solid $border_color
+	&:first-child
+		padding: 0 32px 0 0
+	&:last-child
+		padding: 0 0 0 32px
+		border: none
+	
+.digit, .percent
+	color: $green_color
+	font-weight: $font-bold
+	line-height: 50px
+	margin: 0
+
+.digit
+	font-size: 4.66em
+
+.percent
+	font-size: 0.5em
+	&__smaller
+		color: $red_color		
+		font-size: 15px
+		font-weight: $font_bold
+		margin: 0 0 10px 50px 
+		position: relative
+		&::before, &::after
+			content: ''
+			width: 6px
+			height: 6px
+			position: absolute
+			top: 10px
+		&::before
+			background: $fall_before
+			left: -16px
+		&::after
+			background: $fall_after
+			left: -10px
+	&__score
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+
+.indexes
+	margin: 20px 0 0 0!important
+
+.index
+	display: flex
+	justify-content: space-between
+	align-items: center
+	color: $main_text_color
+	margin-bottom: 10px
+	&__score
+		display: flex
+		.arrow
+			margin: 0 5px 0 10px
+
+.blue
+	color: $blue_color
+	font-weight: $font_bold
+
+.red, .green
+	margin-left: 25px
+
+.red
+	color: $red_color
+	position: relative
+	&::before, &::after
+		content: ''
+		width: 6px
+		height: 6px
+		position: absolute
+		top: 8px
+	&::before
+		background: $fall_before
+		left: -16px
+	&::after
+		background: $fall_after
+		left: -10px
+	&__text
+		color: $red_color
+		margin-left: 0
+
+.green
+	color: $green_color
+	position: relative
+	&::before, &::after
+		content: ''
+		width: 6px
+		height: 6px
+		position: absolute
+		top: 5px
+	&::before
+		background: $raise_before
+		left: -16px
+	&::after
+		background: $raise_after
+		left: -10px
+	&__text
+		color: $red_color
+		margin: 0
+
+.yellow
+	color: $yellow_color
+
+.light__blue
+	color: #109cf1
+
+.data
+	color: $gray_color
+	font-size: 0.83em
+
+.column
+	ul
+		margin-left: 15px
+	&:nth-child(2)
+		ul
+			min-width: 180px
+	&:nth-child(3)
+		ul
+			li
+				white-space: nowrap
+				margin-bottom: 10px
+	&:nth-child(4)
+		ul
+			min-width: 210px
+	&:nth-child(2), &:nth-child(4)
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		
+.column
+	&:nth-child(2), &:nth-child(4)
+		.index
+			&::before
+				content: ''
+				width: 12px
+				height: 12px
+				background-repeat: no-repeat
+				background-position: center
+				position: absolute
+				left: -16px
+
+
+.column
+	&:nth-child(2), &:nth-child(4)
+		.index
+			position: relative
+			@for $i from 1 through 4	
+				&:nth-child(#{$i})
+					&::before
+						background-image: url('../images/circle#{$i}.svg')
+						
+
+.column
+	&:nth-child(3)
+		li
+			&::before
+				content: ''
+				width: 12px
+				height: 12px
+				background-repeat: no-repeat
+				background-position: center
+				position: absolute
+				top: 4px
+				left: -16px
+
+.column
+	&:nth-child(3)
+		li
+			position: relative
+			@for $i from 1 through 4
+				@if $i<=3	
+					&:nth-child(#{$i})
+						&::before
+							background-image: url('../images/ellipse21.svg')
+				@else
+					&:nth-child(#{$i})
+						&::before
+							background-image: url('../images/ellipse24.svg')
+							
+
+
+
+
+
+
